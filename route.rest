@@ -1,0 +1,28 @@
+GET http://localhost:3000/api/user
+
+#####
+GET http://localhost:3000/api/user?id=622abf407e640971106cb1ab
+
+#####
+DELETE http://localhost:3000/api/delete/622abf407e640971106cb1ab
+####
+PUT http://localhost:3000/api/update/622abf407e640971106cb1ab
+Content-Type: application/json
+
+{
+    "status":"Active"
+}
+
+####
+POST http://localhost:3000/api/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"doido",
+    "email":"doido@doido.com",
+    "gender":"Female",
+    "status":"Inactive"
+}
+
+
+
