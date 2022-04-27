@@ -33,11 +33,11 @@ app.use("/", route);
 //Mongoose Connections
 connectDB();
 
-//call port from /config.env or call port 3030 if it is not reachable
-export const PORT = process.env.PORT || 4040;
-export const SERVER = process.env.SERVER || "localhost:";
+//call port from /config.env or call port 4000 if it is not reachable
+export const PORT = process.env.PORT || 4000;
+export const SERVER = process.env.SERVER || "localhost";
 
 app.listen(PORT, () => {
-    console.log(`Server is running on ${SERVER}${PORT}`);
+    console.log(`Server is running on ${SERVER}:${PORT}`);
 });
 console.timeEnd("Execution time:");
