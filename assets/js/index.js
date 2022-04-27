@@ -1,4 +1,5 @@
-import { SERVER, PORT } from "config.env";
+var SERVER = "http://localhost";
+var PORT = 4000;
 
 $("#add_user").submit(function() {
     alert("Data inserted successfully");
