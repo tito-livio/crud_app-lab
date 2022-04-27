@@ -1,4 +1,4 @@
-import { SERVER, PORT } from "../../server.js";
+import { SERVER, PORT } from "config.env";
 
 $("#add_user").submit(function() {
     alert("Data inserted successfully");

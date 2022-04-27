@@ -34,8 +34,8 @@ app.use("/", route);
 connectDB();
 
 //call port from /config.env or call port 4000 if it is not reachable
-export const PORT = process.env.PORT || 4000;
-export const SERVER = process.env.SERVER || "localhost";
+const PORT = process.env.PORT || 4000;
+const SERVER = process.env.SERVER || "localhost";
 
 app.listen(PORT, () => {
     console.log(`Server is running on ${SERVER}:${PORT}`);

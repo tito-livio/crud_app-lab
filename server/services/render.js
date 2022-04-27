@@ -1,10 +1,11 @@
 import axios from "axios";
-import { SERVER, PORT } from "../../server.js";
+import dotenv from "dotenv";
+dotenv.config({ path: "config.env" });
 
 export const homeRoutes = (req, res) => {
     //making a get request to /api/user
     axios
-        .get(SERVER + ":" + PORT + "/api/user/")
+        .get(process.env.SERVER + ":" + process.env.PORT + "/api/user/")
         .then((response) => {
             res.render("index", { user: response.data });
         })
@@ -19,7 +20,9 @@ export const add_user = (req, res) => {
 
 export const update_user = (req, res) => {
     axios
-        .get(SERVER + ":" + PORT + "/api/user/", { params: { id: req.query.id } })
+        .get(process.env.SERVER + ":" + process.env.PORT + "/api/user/", {
+            params: { id: req.query.id },
+        })
         .then((userdata) => {
             res.render("update_user", { user: userdata.data });
         })
