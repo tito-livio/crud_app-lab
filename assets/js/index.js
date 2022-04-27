@@ -10,10 +10,11 @@ $("#update_user").submit(function(event) {
         data[n['name']] = n['value'];
     });
     let request = {
-        "url": `http://localhost:3000/api/update/${data.id}`,
+        "url": `http://localhost:4000/api/update/${data.id}`,
         "method": "PUT",
         "data": data
     }
+    console.log(request);
     $.ajax(request).done((response) => {
         alert("Data Upadated Successfully");
     })
@@ -24,7 +25,7 @@ if (window.location.pathname == "/") {
     $ondelete.click(function() {
         var id = $(this).attr("data-id");
         var request = {
-            "url": `http://localhost:3000/api/delete/${id}`,
+            "url": `http://localhost:4000/api/delete/${id}`,
             "method": "DELETE"
         }
         if (confirm("Are you sure you want to delete this record?")) {

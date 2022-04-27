@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 var schema = mongoose.Schema({
+
     name: {
         type: String,
         required: true

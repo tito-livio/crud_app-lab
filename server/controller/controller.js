@@ -20,7 +20,7 @@ export const createUser = (req, res) => {
     user
         .save(user)
         .then(data => {
-            res.redirect('/add-user');
+            res.redirect('/api/car');
         })
         .catch(err => {
             res.status(500).send({

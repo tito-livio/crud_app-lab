@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const homeRoutes = (req, res) => {
     //making a get request to /api/user
-    axios.get('http://localhost:3000/api/user')
+    axios.get('http://localhost:4000/api/user')
         .then((response) => {
             res.render('index', { user: response.data });
         })
@@ -16,7 +16,7 @@ export const add_user = (req, res) => {
 }
 
 export const update_user = (req, res) => {
-    axios.get('http://localhost:3000/api/user/', { params: { id: req.query.id } })
+    axios.get('http://localhost:4000/api/user/', { params: { id: req.query.id } })
         .then(userdata => {
             res.render("update_user", { user: userdata.data })
         })

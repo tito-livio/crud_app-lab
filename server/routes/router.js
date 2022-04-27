@@ -18,13 +18,13 @@ route.get('/delete-user', delete_user);
 
 /**
  * @description These routes is the API route for the application
- * @method GET/POST/PUT/DELETE for /api/user
+ * @methods GET/POST/PUT/DELETE for /api/user
  */
 route.post('/api/user', createUser);
 
 route.get('/api/user', findUser);
 
-route.put('/api/update/:id', updateUser);
+route.patch('/api/update/:id', updateUser);
 
 route.delete('/api/delete/:id', deleteUser);
 
