@@ -35,7 +35,7 @@ connectDB();
 
 //call port from /config.env or call port 4000 if it is not reachable
 const PORT = process.env.PORT || 4000;
-const SERVER = process.env.SERVER || "https://tito-crud-lab.herokuapp.com/";
+const SERVER = process.env.SERVER || "https://tito-crud-lab.herokuapp.com";
 
 app.listen(PORT, () => {
     console.log(`Server is running on ${SERVER}:${PORT}`);
