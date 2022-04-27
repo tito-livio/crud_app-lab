@@ -1,5 +1,5 @@
-var SERVER = "http://localhost";
-var PORT = 4000;
+const PORT = 4000;
+const SERVER = "https://tito-crud-lab.herokuapp.com";
 
 $("#add_user").submit(function() {
     alert("Data inserted successfully");
