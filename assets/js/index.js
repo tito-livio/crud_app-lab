@@ -12,7 +12,7 @@ $("#update_user").submit(function(event) {
         data[n["name"]] = n["value"];
     });
     let request = {
-        url: `${SERVER}${PORT}/api/update/${data.id}`,
+        url: `${SERVER}:${PORT}/api/update/${data.id}`,
         method: "PUT",
         data: data,
     };
@@ -27,7 +27,7 @@ if (window.location.pathname == "/") {
     $ondelete.click(function() {
         var id = $(this).attr("data-id");
         var request = {
-            url: `${SERVER}${PORT}/api/delete/${id}`,
+            url: `${SERVER}:${PORT}/api/delete/${id}`,
             method: "DELETE",
         };
         if (confirm("Are you sure you want to delete this record?")) {

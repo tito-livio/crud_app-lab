@@ -4,7 +4,7 @@ import { SERVER, PORT } from "../../server.js";
 export const homeRoutes = (req, res) => {
     //making a get request to /api/user
     axios
-        .get(SERVER + ":" + PORT + " / api / user ")
+        .get(SERVER + ":" + PORT + "/api/user/")
         .then((response) => {
             res.render("index", { user: response.data });
         })
