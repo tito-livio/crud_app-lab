@@ -1,39 +1,40 @@
+import { SERVER, PORT } from "../../server.js";
+
 $("#add_user").submit(function() {
     alert("Data inserted successfully");
-})
+});
 
 $("#update_user").submit(function(event) {
     event.preventDefault();
     let unindexed_array = $(this).serializeArray();
     let data = {};
     $.map(unindexed_array, function(n, i) {
-        data[n['name']] = n['value'];
+        data[n["name"]] = n["value"];
     });
     let request = {
-        "url": `http://localhost:4000/api/update/${data.id}`,
-        "method": "PUT",
-        "data": data
-    }
+        url: `${SERVER}${PORT}/api/update/${data.id}`,
+        method: "PUT",
+        data: data,
+    };
     console.log(request);
     $.ajax(request).done((response) => {
-        alert("Data Upadated Successfully");
-    })
-})
+        alert("Data Updated Successfully");
+    });
+});
 
 if (window.location.pathname == "/") {
     $ondelete = $(".table tbody td a.delete");
     $ondelete.click(function() {
         var id = $(this).attr("data-id");
         var request = {
-            "url": `http://localhost:4000/api/delete/${id}`,
-            "method": "DELETE"
-        }
+            url: `${SERVER}${PORT}/api/delete/${id}`,
+            method: "DELETE",
+        };
         if (confirm("Are you sure you want to delete this record?")) {
             $.ajax(request).done((response) => {
                 alert("Data Deleted Successfully");
                 location.reload();
-            })
-
+            });
         }
-    })
+    });
 }
